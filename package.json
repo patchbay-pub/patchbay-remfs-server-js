@@ -6,6 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "patchbay-webfs-server": "./cli.js"
+  },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "patchbay-http": "^0.3.0",
+    "webfs-server": "^0.1.0"
+  }
 }
