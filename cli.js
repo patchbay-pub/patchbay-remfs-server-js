@@ -2,7 +2,7 @@
 
 const process = require('process');
 const http = require('patchbay-http');
-const { createWebFSServer } = require('webfs-server');
+const { createHandler } = require('webfs-server');
 
 if (process.argv.length < 3) {
   console.log("Usage: patchbay-webfs-server ROOT_CHANNEL");
@@ -12,12 +12,8 @@ if (process.argv.length < 3) {
 const rootChannel = process.argv[2];
 const rootPath = '/req' + rootChannel;
 
-const httpServer = http.createServer();
+const webfsHandler = createHandler({ rootPath });
+const httpServer = http.createServer(webfsHandler);
 httpServer.setPatchbayServer('https://patchbay.pub');
 httpServer.setPatchbayChannel(rootChannel);
-
-const srv = createWebFSServer({
-  httpServer,
-  rootPath,
-});
-srv.start();
+httpServer.listen();

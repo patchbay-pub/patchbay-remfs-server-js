@@ -12,7 +12,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "patchbay-http": "^0.3.0",
-    "webfs-server": "^0.1.0"
+    "patchbay-http": "^0.4.0",
+    "webfs-server": "^0.2.0"
   }
 }
