@@ -13,6 +13,6 @@
   "license": "MIT",
   "dependencies": {
     "patchbay-http": "^0.4.0",
-    "webfs-server": "^0.2.0"
+    "webfs-server": "^0.3.0"
   }
 }
