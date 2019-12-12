@@ -1,5 +1,5 @@
 {
-  "name": "patchbay-webfs-server",
+  "name": "patchbay-remfs-server",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -7,12 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "patchbay-webfs-server": "./cli.js"
+    "patchbay-remfs-server": "./cli.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "patchbay-http": "^0.4.0",
-    "webfs-server": "^0.3.0"
+    "remfs-server": "^0.3.0"
   }
 }
