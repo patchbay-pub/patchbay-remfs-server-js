@@ -16,4 +16,5 @@ const remfsHandler = createHandler({ rootPath });
 const httpServer = http.createServer(remfsHandler);
 httpServer.setPatchbayServer('https://patchbay.pub');
 httpServer.setPatchbayChannel(rootChannel);
+httpServer.setNumWorkers(4);
 httpServer.listen();
