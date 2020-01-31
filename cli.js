@@ -12,15 +12,18 @@ if (process.argv.length < 3) {
 const rootChannel = process.argv[2];
 const rootPath = '/req' + rootChannel;
 
-const remfsHandler = createHandler({ rootPath });
-const httpServer = http.createServer(remfsHandler);
-httpServer.setPatchbayServer('https://patchbay.pub');
-//httpServer.setPatchbayServer('http://localhost:9001');
-httpServer.setPatchbayChannel(rootChannel);
-httpServer.setNumWorkers(4);
+(async () => {
+  const remfsHandler = await createHandler({ rootPath });
+  const httpServer = http.createServer(remfsHandler);
+  httpServer.setPatchbayServer('https://patchbay.pub');
+  //httpServer.setPatchbayServer('http://localhost:9001');
+  httpServer.setPatchbayChannel(rootChannel);
+  httpServer.setNumWorkers(4);
 
-if (process.argv.length === 4) {
-  httpServer.setAuthToken(process.argv[3]);
-}
+  if (process.argv.length === 4) {
+    httpServer.setAuthToken(process.argv[3]);
+  }
 
-httpServer.listen();
+  httpServer.listen();
+
+})();
